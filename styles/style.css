@@ -315,7 +315,7 @@ input[type="checkbox"] {
   -ms-flex-align: center;
   align-items: center;
   position: absolute;
-  top: -20%;
+  top: -100%;
   z-index: 10;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -349,7 +349,7 @@ input[type="checkbox"] {
   margin-bottom: 20px; }
 
 .nav_menu.small_screen_element li:first-child {
-  margin-top: 3%;
+  margin-top: 10%;
   margin-left: 85%; }
 
 .nav_menu.small_screen_element label {
