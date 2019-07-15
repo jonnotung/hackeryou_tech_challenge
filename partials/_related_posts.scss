@@ -1,0 +1,90 @@
+.related_posts {
+	background-color: whitesmoke;
+	margin-top: 50px;
+}
+
+// /positioning elements
+.related_posts .inner_wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.related_posts h2 {
+	margin: 40px 0 25px 0;
+}
+
+.related_post_wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.related_post_wrapper .blog_post {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.related_post_wrapper .blog_post:nth-child(2) {
+	margin: 0 20px;
+}
+
+//media queries to reposition post into columns for smaller screens
+//column layout
+@media(max-width: 800px) {
+	.related_post_wrapper {
+		flex-direction: column;
+	}
+
+	.related_post_wrapper .blog_post {
+		margin: 0;
+	}
+
+	.related_post_wrapper .blog_post:nth-child(2) {
+		margin: 20px 0;
+	}
+}
+// enable flickity
+@media(max-width: 450px) {
+
+	.related_post_wrapper {
+		display: block;
+	}
+	
+	.related_post_wrapper .blog_post:nth-child(2) {
+		margin: 0;
+	}
+
+	.related_post_wrapper .blog_post {
+		margin: 0 100px;
+	}
+	
+	
+
+	//enanble flickity scrolling for this section
+	.post_carousel:after {
+		content: 'flickity';
+		display: none;
+	}
+
+	.post_carousel {
+		width: 100%;
+	}
+
+	.post_carousel_cell {
+		text-align: center;
+		width: 100%;
+		// set explicit min height for flickity 
+		min-height: 460px;
+		margin: 0 50px;
+	}
+
+	/* gallery focus */
+	.flickity-enabled:focus .flickity-viewport {
+		outline: 1px dotted grey;
+	}
+
+}

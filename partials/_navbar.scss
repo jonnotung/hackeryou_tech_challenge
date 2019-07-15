@@ -1,0 +1,176 @@
+// styles for navbar
+nav.outer_wrapper {
+	background-color: white;
+}
+
+// positioning elements
+nav .inner_wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav_logo {
+	width: 50%;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+nav h1 {	
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+.nav_menu.widescreen_element {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu_toggle {
+	margin-top: 2%;
+}
+
+// typography
+nav a {
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+// link over effects
+.nav_menu a {
+	transition: 0.3s;
+	padding: 2px 2px;
+}
+
+.nav_menu a:hover {
+	// color: #eee;
+	// text-shadow: 0 0 3px #222;
+	// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: 0 0 5px black;
+}
+
+.nav_menu a:focus {
+	outline: 1px solid black;
+}
+
+.nav_menu.small_screen_element a:focus {
+	outline: 1px solid white;
+}
+
+//hiding checkbox for sliding menu
+input[type="checkbox"] {
+	display: none;
+}
+
+
+//positioning and styling sliding menu
+.nav_menu.small_screen_element {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	top: -20%;
+	z-index: 10;
+	transition: 0.3s;
+	background-color: #555;
+	padding-bottom: 2%;
+}
+
+.nav_menu.small_screen_element li {
+	width: 100%;
+	background-color: #555;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.nav_menu.small_screen_element a {
+	display: inline-block;
+	color: #ddd;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.nav_menu.small_screen_element li:first-child {
+	margin-top: 3%;
+	margin-left: 85%;
+	
+}
+
+.nav_menu.small_screen_element label {
+	color: #ddd;
+	font-size: 1.6rem;
+}
+
+.nav_menu.small_screen_element a {
+	transition: 0.3s;
+}
+
+.nav_menu.small_screen_element a:hover {
+	// color: red;
+	color: #eee;
+	// text-shadow: 0 0 3px white;
+	text-shadow: 0 0 10px white;
+}
+
+//toggle menu slide down when checkbox is checked
+.menu_toggle:checked + ul.nav_menu.small_screen_element {
+	top: 0;
+}
+
+.menu_toggle:checked ~ .outer_wrapper {
+	bottom: -30%;
+} 
+
+//media queries for responsive resizing
+//mid size: stack logo and menu;
+@media(max-width: 850px) {
+	.nav_logo {
+		width: 100%;
+		height: 50%;
+		justify-content: center;
+		margin: 10px 0 8px 0;
+	}
+
+	.nav_logo h1 {
+		margin: 0 auto;
+	}
+
+
+	nav .inner_wrapper {
+		flex-direction: column;
+	}
+
+	.nav_menu.widescreen_element {
+		width: 100%;
+		height: 50%;
+		justify-content: space-between;
+		margin: 0 0 10px 0;
+	}
+}
+
+// smallest size: show menu icon that makes menu slide in from top;
+@media (max-width: 500px) {
+	label.small_screen_element {
+		font-size: 1rem;
+		display: block;
+		margin: 0 0 10px 0;
+	}
+	
+	.nav_menu.widescreen_element {
+		display: none;
+	}
+
+}
